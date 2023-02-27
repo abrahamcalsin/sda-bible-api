@@ -16,12 +16,17 @@ app.get("/", (req, res) => {
     message: "Welcome to the API of SDA - OBS Bible",
     endpoints: [
       {
-        path: "/bible",
-        description: "Get all the data from the Bible",
+        path: "/api/books",
+        description: "Get all the books from the Bible",
         queryParameters: [
           {
-            name: "/book/:bookId",
-            description: "Filter chapters and verses by book(optional)",
+            name: "/:bookName/chapters",
+            description: "Filter chapters by book name",
+            type: "string",
+          },
+          {
+            name: "/:bookName/chapters/:chapter/verses",
+            description: "Filter verses by book name and chapter",
             type: "string",
           },
         ],
