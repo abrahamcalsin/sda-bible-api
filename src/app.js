@@ -1,13 +1,15 @@
 const express = require("express");
-const bibleRouter = require("./routes/bible");
-const bookRouter = require("./routes/book");
+const booksRouter = require("./routes/books");
+const chaptersRouter = require("./routes/chapters");
+const versesRouter = require("./routes/verses");
 
 const app = express();
 
-const PORT = 3000;
+const PORT = 8000;
 
-app.use("/api/bible", bibleRouter);
-app.use("/api/bible/book", bookRouter);
+app.use("/api/bible/books", booksRouter);
+app.use("/api/bible/books", chaptersRouter);
+app.use("/api/bible/books", versesRouter);
 
 app.get("/", (req, res) => {
   const apiInfo = {
