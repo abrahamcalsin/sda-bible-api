@@ -9,6 +9,7 @@ const getBooks = () => {
         const book = rows.map((row) => {
           return {
             book_id: row.BOOK_ID,
+            book_name_id: row.book_name_id,
             book_name: row.BOOK_NAME,
             chapters_count: row.chapters_count,
             translation_name: row.translation_name,
