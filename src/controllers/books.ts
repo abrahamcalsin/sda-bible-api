@@ -1,18 +1,18 @@
-const Bible = require("../models/books");
+import { getBooksModel } from "~/models/books";
 
-const getBooks = () => {
+export const getBooksController = () => {
   return new Promise((resolve, reject) => {
-    Bible.getBooks((error, rows) => {
+    getBooksModel((error, rows) => {
       if (error) {
         reject(error);
       } else {
         const book = rows.map((row) => {
           return {
             book_id: row.BOOK_ID,
-            book_name_id: row.book_name_id,
+            book_name_id: row.BOOK_NAME_NORM,
             book_name: row.BOOK_NAME,
-            chapters_count: row.chapters_count,
-            translation_name: row.translation_name,
+            chapters_count: row.CHAPTERS,
+            translation_name: row.BIBLE_NAME,
           };
         });
 
@@ -21,5 +21,3 @@ const getBooks = () => {
     });
   });
 };
-
-module.exports = { getBooks };

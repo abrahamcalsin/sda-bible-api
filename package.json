@@ -2,9 +2,12 @@
   "name": "sda-bible-obs-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
-    "dev": "nodemon ./src/app.js"
+    "start": "node dist/src/app.js",
+    "dev": "nodemon ./src/app.ts",
+    "build": "pnpm run clean && tsc && tsc-alias",
+    "clean": "rimraf -rf dist"
   },
   "keywords": [],
   "author": "abrahamcalsin",
@@ -14,6 +17,20 @@
     "sqlite3": "^5.1.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.14.2",
+    "nodemon": "^2.0.20",
+    "rimraf": "^4.3.1",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.2",
+    "tsconfig-paths": "^3.14.2",
+    "typescript": "^4.9.5"
+  },
+  "nodemonConfig": {
+    "env": {
+      "TZ": "utc"
+    },
+    "exec": "ts-node --transpile-only -r tsconfig-paths/register",
+    "ext": "ts,js"
   }
 }

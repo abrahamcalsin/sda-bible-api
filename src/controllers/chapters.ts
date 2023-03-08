@@ -1,8 +1,8 @@
-const Bible = require("../models/chapters");
+import { getChaptersModel } from "~/models/chapters";
 
-const getChapters = (bookName) => {
+export const getChaptersController = (bookName: string) => {
   return new Promise((resolve, reject) => {
-    Bible.getChapters(bookName, (error, rows) => {
+    getChaptersModel(bookName, (error, rows) => {
       if (error) {
         reject(error);
       } else {
@@ -10,7 +10,7 @@ const getChapters = (bookName) => {
           return {
             book_id: row.BOOK_ID,
             chapter: row.CHAPTER,
-            verses_count: row.verses_count,
+            verses_count: row.VERSES,
           };
         });
 
@@ -19,5 +19,3 @@ const getChapters = (bookName) => {
     });
   });
 };
-
-module.exports = { getChapters };

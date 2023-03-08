@@ -1,8 +1,8 @@
-const Bible = require("../models/verses");
+import { getVersesModel } from "~/models/verses";
 
-const getVerses = (bookName, chapter) => {
+export const getVersesController = (bookName: string, chapter: string) => {
   return new Promise((resolve, reject) => {
-    Bible.getVerses(bookName, chapter, (error, rows) => {
+    getVersesModel(bookName, chapter, (error, rows) => {
       if (error) {
         reject(error);
       } else {
@@ -19,5 +19,3 @@ const getVerses = (bookName, chapter) => {
     });
   });
 };
-
-module.exports = { getVerses };
