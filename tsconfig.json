@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["ESNext", "dom"],
-    "outDir": "./build",
+    "outDir": "./dist",
     "removeComments": true,
     "target": "ES6",
     "module": "CommonJS",
