@@ -4,6 +4,7 @@
     "outDir": "./build",
     "removeComments": true,
     "target": "ES6",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "sourceMap": true,
