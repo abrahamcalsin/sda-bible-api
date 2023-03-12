@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import booksRouter from "./routes/books";
 import chaptersRouter from "./routes/chapters";
@@ -7,6 +8,12 @@ import versesRouter from "./routes/verses";
 const app = express();
 
 const PORT = 8000;
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use("/api/bible/books", booksRouter);
 app.use("/api/bible/books", chaptersRouter);
