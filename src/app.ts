@@ -42,7 +42,11 @@ app.get("/api", (_req, res) => {
     ],
   };
 
-  res.json(apiInfo);
+  return res.json(apiInfo);
+});
+
+app.get("/api/hello", (_req, res) => {
+  return res.send("Hello WOrld");
 });
 
 // app.listen(PORT, () => {
