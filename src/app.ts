@@ -7,7 +7,7 @@ import versesRouter from "./routes/verses";
 
 const app = express();
 
-const PORT = process.env.PORT || 8000;
+// const PORT = process.env.PORT || 8000;
 
 app.use(
   cors({
@@ -45,6 +45,8 @@ app.get("/", (_req, res) => {
   res.json(apiInfo);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server listening on http://localhost:${PORT}`);
+// });
+
+export default app;
