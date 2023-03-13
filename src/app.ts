@@ -19,7 +19,7 @@ app.use("/api/bible/books", booksRouter);
 app.use("/api/bible/books", chaptersRouter);
 app.use("/api/bible/books", versesRouter);
 
-app.get("/", (_req, res) => {
+app.get("/api", (_req, res) => {
   const apiInfo = {
     message: "Welcome to the API of SDA - OBS Bible",
     endpoints: [
