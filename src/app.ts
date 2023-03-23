@@ -21,7 +21,7 @@ app.use("/api/bible/books", versesRouter);
 
 app.get("/api", (_req, res) => {
   const apiInfo = {
-    message: "Welcome to the API of SDA - OBS Bible",
+    message: "Welcome to the SDA Bible - API",
     endpoints: [
       {
         path: "/api/books",
