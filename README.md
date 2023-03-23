@@ -72,4 +72,4 @@ You can change the structure of the JSON data in the API, and you can also deplo
 
 ## License:
 
-This project is licensed under the GNU GPL License. See the [LICENSE.md](<(LICENSE)>) file for details.
+This project is licensed under the GNU GPL License. See the [LICENSE.md](LICENSE) file for details.
